@@ -1,15 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "YAL9S+1C1Fg=",
+  "dgSpecHash": "GZytW143HOw=",
   "success": true,
   "projectFilePath": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\leo\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\leo\\.nuget\\packages\\google.protobuf\\3.29.1\\google.protobuf.3.29.1.nupkg.sha512",
     "C:\\Users\\leo\\.nuget\\packages\\grpc.core.api\\2.67.0\\grpc.core.api.2.67.0.nupkg.sha512",
     "C:\\Users\\leo\\.nuget\\packages\\grpc.net.client\\2.67.0\\grpc.net.client.2.67.0.nupkg.sha512",
     "C:\\Users\\leo\\.nuget\\packages\\grpc.net.common\\2.67.0\\grpc.net.common.2.67.0.nupkg.sha512",
     "C:\\Users\\leo\\.nuget\\packages\\grpc.tools\\2.68.1\\grpc.tools.2.68.1.nupkg.sha512",
-    "C:\\Users\\leo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512"
+    "C:\\Users\\leo\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\leo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\leo\\.nuget\\packages\\multicashflow.common\\1.0.2\\multicashflow.common.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }

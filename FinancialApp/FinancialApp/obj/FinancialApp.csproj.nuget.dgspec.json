@@ -28,6 +28,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux": {},
+          "C:\\Users\\leo\\source\\repos\\systematic-strategies-net\\PricingLibraryDoc": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.68.1, )"
+            },
+            "MultiCashFlow.Common": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
