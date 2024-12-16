@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alysh\\Documents\\Ensimag\\CouvertureMultiFlux\\PricingEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66EFB15D-810B-4AF0-8B5C-629E62551623}|PricingEngine\\PricingEngine.vcxproj|C:\\Users\\alysh\\Documents\\Ensimag\\CouvertureMultiFlux\\PricingEngine\\PricingEngine\\PricingEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{66EFB15D-810B-4AF0-8B5C-629E62551623}|PricingEngine\\PricingEngine.vcxproj|solutionrelative:PricingEngine\\PricingEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PricingEngine.cpp",
+              "DocumentMoniker": "C:\\Users\\alysh\\Documents\\Ensimag\\CouvertureMultiFlux\\PricingEngine\\PricingEngine\\PricingEngine.cpp",
+              "RelativeDocumentMoniker": "PricingEngine\\PricingEngine.cpp",
+              "ToolTip": "C:\\Users\\alysh\\Documents\\Ensimag\\CouvertureMultiFlux\\PricingEngine\\PricingEngine\\PricingEngine.cpp",
+              "RelativeToolTip": "PricingEngine\\PricingEngine.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-16T13:17:50.999Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
