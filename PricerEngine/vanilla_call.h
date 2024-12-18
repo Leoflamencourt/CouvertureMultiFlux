@@ -4,5 +4,6 @@
 
 class VanillaCall : public Option {
 public:
-    double payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates);
+    VanillaCall(PnlVect *strikes, PnlVect *paymentDates);
+    double payoff(PnlMat *path);
 };

@@ -5,6 +5,7 @@
 #include "pnl/pnl_vector.h"
 #include "pnl/pnl_matrix.h"
 #include "pnl/pnl_random.h"
+#include "option.h"
 
 class BlackScholesPricer {
 public:
@@ -14,6 +15,7 @@ public:
     PnlRng *mRng;
     PnlVect *mIndependentShocks;
     PnlVect *mCorrelatedShocks;
+    std::string payoffType;
     int nAssets;
     double interestRate;
     double fdStep;
@@ -23,7 +25,7 @@ public:
     ~BlackScholesPricer();
     void generateCorrelatedShocks();
     void asset(const PnlMat *past, double currentDate, bool isMonitoringDate, PnlMat *path);
-    void montecarlo(double &price, double &priceStdDev, PnlMat *path);
+    void montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path);
     void priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev);
     void print();
 };

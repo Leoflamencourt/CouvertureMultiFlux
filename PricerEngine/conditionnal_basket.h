@@ -1,7 +1,7 @@
 #pragma once
 
-#include "option.h"
+#include "option_multiflux.h"
 
-class ConditionnalBasket : public Option {
-    void payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates);
+class ConditionnalBasket : public OptionMultiflux {
+    double payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates);
 };

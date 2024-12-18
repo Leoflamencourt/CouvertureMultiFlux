@@ -2,6 +2,16 @@
 
 #include "vanilla_call.h"
 
-double VanillaCall::payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates){
-    return 0.0;
+VanillaCall::VanillaCall(PnlVect *strikes, PnlVect *paymentDates)
+    : Option(strikes, paymentDates) {
+}
+
+double VanillaCall::payoff(PnlMat *path){
+    double sum = 0;
+    int nAssets = path->n;
+    for (int i = 0; i < nAssets; ++i) {
+        sum += MGET(path, i, path->m - 1);
+    }
+    sum /= nAssets;
+    return (sum - GET(strikes, 0)) > 0 ? (sum - GET(strikes, 0)) : 0;
 }
