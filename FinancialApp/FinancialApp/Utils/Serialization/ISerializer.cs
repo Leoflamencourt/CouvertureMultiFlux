@@ -1,7 +1,9 @@
-﻿namespace FinancialApp.Utils.Serialization
+﻿using ParameterInfo;
+
+namespace FinancialApp.Utils.Serialization
 {
     public interface ISerializer<TInput, TOutput>
     {
-        TOutput Serialize(TInput input, bool monitoringDateReached, DateTime time);
+        TOutput Serialize(TInput input, TestParameters parameters);
     }
 }

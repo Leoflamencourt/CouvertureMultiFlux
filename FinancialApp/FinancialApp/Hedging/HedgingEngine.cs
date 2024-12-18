@@ -51,7 +51,7 @@ namespace FinancialApp.Services
                 // Vérification du rebalancement via l'oracle
                 if (rebalancingOracle.ShouldRebalance(current_date))
                 {
-                    //todo appeler a nouveau le pricer, puius updtae le porfolio en le mettant à jour avec sa nouvelele compo en utilisant la metho dans optionAsset.  enfin ajoute la methode update porfolio dans le portfolio. 
+                    //todo appeler a nouveau le pricer, puius updtae le porfolio en le mettant à jour avec sa nouvelele compo en utilisant la metho dans optionAsset.  enfin ajoute la methode update porfolio dans le portfolio. Appelle ler datafeeds avec un osus datafeed de la date initiale jsuqà la dernière date 
                 }
 
             

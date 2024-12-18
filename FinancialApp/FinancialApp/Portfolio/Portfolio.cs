@@ -11,7 +11,7 @@ namespace FinancialApp.Portfolio
         public double Cash { get; private set; }
         public DateTime LastRebalancingDate { get; private set; }
 
-        public Portfolio(List<Asset> assets, double initialInvestment, Dictionary<string, double> assetProp)
+        public Portfolio(List<Asset> assets, double initialInvestment, Dictionary<string, double> assetProp, TestParameters parameters, DateTime rebalancingDate)
         {
             this.Assets = assets;
             this.AssetProportions = assetProp;

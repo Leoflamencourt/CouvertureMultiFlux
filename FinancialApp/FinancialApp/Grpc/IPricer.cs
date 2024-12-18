@@ -1,16 +1,15 @@
 ﻿using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinancialApp.Grpc
 {
+    /// <summary>
+    /// Interface pour définir un pricer capable de sérialiser les entrées et d'obtenir des sorties via gRPC.
+    /// </summary>
     public interface IPricer
     {
-        public PricingOutput Price(DateTime current_date, List<DataFeed> dataFeeds, TestParameters testParameters);
+       
+        Task<PricingOutput> PriceandDeltaAsync(List<DataFeed> dataFeeds, DateTime currentDate, TestParameters testParameters);
     }
 }

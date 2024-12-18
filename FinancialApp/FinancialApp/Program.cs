@@ -17,8 +17,8 @@ class Program
             return;
         }
         //Recup filePath
-        string marketDataPath = args[0];
-        string financialParamsPath = args[1];
+        string financialParamsPath = args[0];
+        string marketDataPath = args[1];
         string portfolioPath=args[2];
 
         //read Data
@@ -27,7 +27,7 @@ class Program
 
         MarketDataDeserializer csvDeserializer = new MarketDataDeserializer();
         List<DataFeed> dataFeeds = csvDeserializer.Deserialize(marketDataPath);
-
+        
         List<OutputData> outputDatas= HedgingEngine.ComputePortfolio(financialParams, dataFeeds );
         //tofo HedgingEngine
 

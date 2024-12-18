@@ -1,6 +1,7 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using Grpc.Net.Client;
 using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
@@ -10,41 +11,50 @@ namespace FinancialApp.Grpc
 {
     public class Pricer : IPricer
     {
-       
-        public PricingOutput Price(DateTime current_date, List<DataFeed> dataFeeds, TestParameters testParameters)
-        {
-            PricingInputSerializer serializer = new PricingInputSerializer();
+        private readonly GrpcPricer.GrpcPricerClient _client;
 
-            // Sérialisation
-            PricingInput input = serializer.Serialize(dataFeeds, true, current_date);
+        /// <summary>
+        /// Constructeur pour initialiser le client gRPC.
+        /// </summary>
+        /// <param name="serverAddress">L'adresse du serveur gRPC.</param>
+        public Pricer(string serverAddress)
+        {
+            var httpHandler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback =
+                    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+
+            var channel = GrpcChannel.ForAddress(serverAddress, new GrpcChannelOptions { HttpHandler = httpHandler });
+            _client = new GrpcPricer.GrpcPricerClient(channel);
+        }
+
+        /// <summary>
+        /// Sérialise les données et récupère les PricingOutput en appelant le serveur gRPC.
+        /// </summary>
+        /// <param name="dataFeeds">Les données de marché.</param>
+        /// <param name="currentDate">La date actuelle.</param>
+        /// <param name="testParameters">Les paramètres de test.</param>
+        /// <returns>Un objet PricingOutput contenant les résultats.</returns>
+        public async Task<PricingOutput> PriceandDeltaAsync(List<DataFeed> subDataFeeds, DateTime currentDate, TestParameters testParameters)
+        {
+            // Sérialisation de l'entrée
+            PricingInputSerializer serializer = new PricingInputSerializer();
+            PricingInput input = serializer.Serialize(subDataFeeds, testParameters);
+        
+
+            try
+            {
+                // Appel au serveur gRPC pour obtenir les PricingOutput
+                PricingOutput response = await _client.PriceAndDeltasAsync(input);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                // Gestion des erreurs (par exemple, journalisation)
+                Console.WriteLine($"Erreur lors de l'appel gRPC : {ex.Message}");
+                throw;
+            }
         }
     }
 }
-// Initialisation des dépendances
-//var grpcClient = new GrpcPricingClient("http://localhost:50051");
-//var marketDataDeserializer = new MarketDataDeserializer();
-//var financialParamsDeserializer = new ParameterJsonDeserialiser();
-//var pricingInputSerializer = new PricingInputSerializer();
-//private readonly GrpcPricer.GrpcPricerClient _client;
-
-//public GrpcPricingClient(string serverAddress)
-//{
-//    var httpHandler = new HttpClientHandler
-//    {
-//        ServerCertificateCustomValidationCallback =
-//            HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-//    };
-
-//    var channel = GrpcChannel.ForAddress(serverAddress, new GrpcChannelOptions { HttpHandler = httpHandler });
-//    _client = new GrpcPricer.GrpcPricerClient(channel);
-//}
-
-//public Task<ReqInfo> GetHeartbeatAsync()
-//{
-//    return _client.HeartbeatAsync(new Empty()).ResponseAsync;
-//}
-
-//public Task<PricingOutput> GetPriceAndDeltasAsync(PricingInput input)
-//{
-//    return _client.PriceAndDeltasAsync(input).ResponseAsync;
-//}
