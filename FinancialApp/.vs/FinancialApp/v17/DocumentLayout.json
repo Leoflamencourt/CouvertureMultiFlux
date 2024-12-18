@@ -3,52 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\servicies\\hedgingengineclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\servicies\\hedgingengineclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\princinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\princinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\iserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\iserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\jsonwritter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\jsonwritter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\parameterjsondeserialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\parameterjsondeserialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\grpc\\pricer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\grpc\\pricer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\grpc\\ipricer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\grpc\\ipricer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\hedging\\hedgingengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\hedging\\hedgingengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\hedging\\ihedgingengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\hedging\\ihedgingengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\rebalancing\\fixedrebalancingoracle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\rebalancing\\fixedrebalancingoracle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\rebalancing\\irebalancingoraclebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\rebalancing\\irebalancingoraclebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\deserializer\\parameterjsondeserialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\deserializer\\parameterjsondeserialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\assets\\optionasset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\assets\\optionasset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\deserializer\\marketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\deserializer\\marketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\portfolio\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\portfolio\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\servicies\\ihedgingengineclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\servicies\\ihedgingengineclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\marketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\marketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\grpc\\grpcclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\grpc\\grpcclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\utils\\serialization\\ideserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\utils\\serialization\\ideserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\financialapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\financialapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\serializer\\princinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\serializer\\princinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\serializer\\ipricinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\serializer\\ipricinginputserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\deserializer\\iinputparametersjsondeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\deserializer\\iinputparametersjsondeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\deserializer\\iinputmarketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\deserializer\\iinputmarketdatadeserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|c:\\users\\leo\\desktop\\couverturemultiflux\\financialapp\\financialapp\\grpc\\igrpcclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A3A491-5065-4E25-A702-25FE4B512D6F}|FinancialApp\\FinancialApp.csproj|solutionrelative:financialapp\\grpc\\igrpcclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,162 +74,215 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 16,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Program.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Program.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Program.cs",
-              "RelativeToolTip": "FinancialApp\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAABHAAAAAAAAAA==",
+              "Title": "ISerializer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\ISerializer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\ISerializer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\ISerializer.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\ISerializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:15:34.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HedgingEngineClient.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Servicies\\HedgingEngineClient.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Servicies\\HedgingEngineClient.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Servicies\\HedgingEngineClient.cs",
-              "RelativeToolTip": "FinancialApp\\Servicies\\HedgingEngineClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:13:50.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IHedgingEngineClient.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Servicies\\IHedgingEngineClient.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Servicies\\IHedgingEngineClient.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Servicies\\IHedgingEngineClient.cs",
-              "RelativeToolTip": "FinancialApp\\Servicies\\IHedgingEngineClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:13:50.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FinancialApp.csproj",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
-              "RelativeDocumentMoniker": "FinancialApp\\FinancialApp.csproj",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
-              "RelativeToolTip": "FinancialApp\\FinancialApp.csproj",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-16T17:53:29.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MarketDataDeserializer.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\MarketDataDeserializer.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Deserializer\\MarketDataDeserializer.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\MarketDataDeserializer.cs",
-              "RelativeToolTip": "FinancialApp\\Deserializer\\MarketDataDeserializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T14:41:01.685Z",
+              "WhenOpened": "2024-12-18T08:59:57.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GrpcClient.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\GrpcClient.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Grpc\\GrpcClient.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\GrpcClient.cs",
-              "RelativeToolTip": "FinancialApp\\Grpc\\GrpcClient.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IPricer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\IPricer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Grpc\\IPricer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\IPricer.cs",
+              "RelativeToolTip": "FinancialApp\\Grpc\\IPricer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:53:51.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ParameterJsonDeserialiser.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\ParameterJsonDeserialiser.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Deserializer\\ParameterJsonDeserialiser.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\ParameterJsonDeserialiser.cs",
-              "RelativeToolTip": "FinancialApp\\Deserializer\\ParameterJsonDeserialiser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T14:41:16.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PrincingInputSerializer.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Serializer\\PrincingInputSerializer.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Serializer\\PrincingInputSerializer.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Serializer\\PrincingInputSerializer.cs",
-              "RelativeToolTip": "FinancialApp\\Serializer\\PrincingInputSerializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T20:00:36.578Z",
+              "WhenOpened": "2024-12-18T08:40:50.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IPricingInputSerializer.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Serializer\\IPricingInputSerializer.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Serializer\\IPricingInputSerializer.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Serializer\\IPricingInputSerializer.cs",
-              "RelativeToolTip": "FinancialApp\\Serializer\\IPricingInputSerializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "FixedRebalancingOracle.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Rebalancing\\FixedRebalancingOracle.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Rebalancing\\FixedRebalancingOracle.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Rebalancing\\FixedRebalancingOracle.cs",
+              "RelativeToolTip": "FinancialApp\\Rebalancing\\FixedRebalancingOracle.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:56:11.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IInputParametersJsonDeserializer.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\IInputParametersJsonDeserializer.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Deserializer\\IInputParametersJsonDeserializer.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\IInputParametersJsonDeserializer.cs",
-              "RelativeToolTip": "FinancialApp\\Deserializer\\IInputParametersJsonDeserializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T17:56:41.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IInputMarketDataDeserializer.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\IInputMarketDataDeserializer.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Deserializer\\IInputMarketDataDeserializer.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Deserializer\\IInputMarketDataDeserializer.cs",
-              "RelativeToolTip": "FinancialApp\\Deserializer\\IInputMarketDataDeserializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T16:42:53.14Z",
+              "WhenOpened": "2024-12-18T08:19:03.699Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "IGrpcClient.cs",
-              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\IGrpcClient.cs",
-              "RelativeDocumentMoniker": "FinancialApp\\Grpc\\IGrpcClient.cs",
-              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\IGrpcClient.cs",
-              "RelativeToolTip": "FinancialApp\\Grpc\\IGrpcClient.cs",
+              "Title": "OptionAsset.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Assets\\OptionAsset.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Assets\\OptionAsset.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Assets\\OptionAsset.cs",
+              "RelativeToolTip": "FinancialApp\\Assets\\OptionAsset.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T08:16:00.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRebalancingOracleBase.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Rebalancing\\IRebalancingOracleBase.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Rebalancing\\IRebalancingOracleBase.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Rebalancing\\IRebalancingOracleBase.cs",
+              "RelativeToolTip": "FinancialApp\\Rebalancing\\IRebalancingOracleBase.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T08:13:32.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Portfolio.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Portfolio\\Portfolio.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Portfolio\\Portfolio.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Portfolio\\Portfolio.cs",
+              "RelativeToolTip": "FinancialApp\\Portfolio\\Portfolio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:53:47.911Z"
+              "WhenOpened": "2024-12-17T20:54:38.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HedgingEngine.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Hedging\\HedgingEngine.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Hedging\\HedgingEngine.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Hedging\\HedgingEngine.cs",
+              "RelativeToolTip": "FinancialApp\\Hedging\\HedgingEngine.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:27:58.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IHedgingEngine.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Hedging\\IHedgingEngine.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Hedging\\IHedgingEngine.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Hedging\\IHedgingEngine.cs",
+              "RelativeToolTip": "FinancialApp\\Hedging\\IHedgingEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:27:55.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Pricer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\Pricer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Grpc\\Pricer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Grpc\\Pricer.cs",
+              "RelativeToolTip": "FinancialApp\\Grpc\\Pricer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:27:11.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParameterJsonDeserialiser.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\ParameterJsonDeserialiser.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\ParameterJsonDeserialiser.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\ParameterJsonDeserialiser.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\ParameterJsonDeserialiser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:18:58.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MarketDataDeserializer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\MarketDataDeserializer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\MarketDataDeserializer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\MarketDataDeserializer.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\MarketDataDeserializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:18:43.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JsonWritter.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\JsonWritter.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\JsonWritter.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\JsonWritter.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\JsonWritter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:18:38.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IDeserializer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\IDeserializer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\IDeserializer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\IDeserializer.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\IDeserializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:18:13.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Program.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Program.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Program.cs",
+              "RelativeToolTip": "FinancialApp\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwB4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:17:44.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FinancialApp.csproj",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
+              "RelativeDocumentMoniker": "FinancialApp\\FinancialApp.csproj",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
+              "RelativeToolTip": "FinancialApp\\FinancialApp.csproj",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-16T17:53:29.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PrincingInputSerializer.cs",
+              "DocumentMoniker": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
+              "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
+              "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
+              "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T20:00:36.578Z",
+              "EditorCaption": ""
             }
           ]
         }

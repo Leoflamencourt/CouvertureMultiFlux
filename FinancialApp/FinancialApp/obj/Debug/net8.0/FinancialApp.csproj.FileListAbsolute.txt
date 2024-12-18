@@ -1,0 +1,6 @@
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.AssemblyReference.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfoInputs.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfo.cs
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.CoreCompileInputs.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.sourcelink.json

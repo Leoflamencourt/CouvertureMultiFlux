@@ -2,40 +2,40 @@
 using System.Threading.Tasks;
 using FinancialApp.Grpc;
 using FinancialApp.Services;
-using FinancialApp.Deserializer;
-using FinancialApp.Serializer;
-using FinancialApp.Serializers;
-using FinancialApp.Parser;
 
+using ParameterInfo;
+using FinancialApp.Utils.Serialization;
+using MarketData;
 class Program
 {
     static async Task Main(string[] args)
     {
         // Vérifier que les arguments de la ligne de commande sont fournis
-        if (args.Length < 2)
+        if (args.Length < 3)
         {
             Console.WriteLine("Usage: FinancialApp <marketDataPath> <financialParamsPath>");
             return;
         }
-
+        //Recup filePath
         string marketDataPath = args[0];
         string financialParamsPath = args[1];
+        string portfolioPath=args[2];
 
-        // Initialisation des dépendances
-        var grpcClient = new GrpcPricingClient("http://localhost:50051");
-        var marketDataDeserializer = new MarketDataDeserializer();
-        var financialParamsDeserializer = new ParameterJsonDeserialiser();
-        var pricingInputSerializer = new PricingInputSerializer();
+        //read Data
+        ParameterJsonDeserializer jsonDeserializer = new ParameterJsonDeserializer();
+        TestParameters financialParams = jsonDeserializer.Deserialize(financialParamsPath);
 
-        // Création de l'HedgingEngineClient
-        var hedgingEngineClient = new HedgingEngineClient(
-            grpcClient,
-            marketDataDeserializer,
-            financialParamsDeserializer,
-            pricingInputSerializer
-        );
+        MarketDataDeserializer csvDeserializer = new MarketDataDeserializer();
+        List<DataFeed> dataFeeds = csvDeserializer.Deserialize(marketDataPath);
 
-        // Exécution du processus de couverture avec les chemins fournis
-        await hedgingEngineClient.RunHedgingAsync(marketDataPath, financialParamsPath);
+        List<OutputData> outputDatas= HedgingEngine.ComputePortfolio(financialParams, dataFeeds );
+        //tofo HedgingEngine
+
+
+
+        //write result 
+        JsonWriter.writer(portfolioPath, outputDatas);
+
+        
     }
 }

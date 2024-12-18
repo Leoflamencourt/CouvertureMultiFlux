@@ -1,15 +1,12 @@
-﻿using FinancialApp.Deserializer;
-using MarketData;
+﻿using MarketData;
 
-
-namespace FinancialApp.Parser
+namespace FinancialApp.Utils.Serialization
 {
-    public class MarketDataDeserializer : IInputMarketDataDeserializer
+    public class MarketDataDeserializer : IDeserializer<List<DataFeed>>
     {
         public List<DataFeed> Deserialize(string filePath)
         {
             return MarketDataReader.ReadDataFeeds(filePath);
         }
-
     }
 }

@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Portfolio\" />
     <Folder Include="Protos\" />
   </ItemGroup>
 
