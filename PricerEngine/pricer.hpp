@@ -17,6 +17,7 @@ public:
 
     BlackScholesPricer(nlohmann::json &jsonParams);
     ~BlackScholesPricer();
+    std::pair<double,double> montecarlo(int nSamples, double currentDate);
     void priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev);
     void print();
 };

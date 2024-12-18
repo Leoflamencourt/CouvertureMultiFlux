@@ -30,10 +30,28 @@ void BlackScholesPricer::print() {
     pnl_mat_print(volatility);
 }
 
+//std::pair<double,double> BlackScholesPricer::montecarlo(int nSamples, double currentDate) 
+//{
+//    double price = 0.0;
+//    double stddev = 0.0;
+//
+//    for (int i = 0; i < nSamples; i++) {
+//        
+//    }
+//    
+//    return {price, stddev};
+//}
+
 void BlackScholesPricer::priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev) {
-    price = 0.;
-    priceStdDev = 0.;
+    //std::pair<double, double> pricing_results = montecarlo(nSamples, currentDate);
+    price = 0.0;
+    priceStdDev = 0.0;
     deltas = pnl_vect_create_from_zero(nAssets);
     deltasStdDev = pnl_vect_create_from_zero(nAssets);
     /* A compléter */
+
+    PnlMat* path = pnl_mat_create_from_zero(paymentDates->size, nAssets);
+
+
+
 }

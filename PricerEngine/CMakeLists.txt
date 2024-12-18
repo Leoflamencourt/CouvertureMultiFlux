@@ -77,7 +77,7 @@ target_link_libraries(pricer_grpc_proto
     ${_PROTOBUF_LIBPROTOBUF}
 )
 
-add_executable(pricing_server pricing_server.cpp pricer.cpp json_reader.cpp )
+add_executable(pricing_server pricing_server.cpp pricer.cpp json_reader.cpp option.cpp conditionnal_basket.cpp conditionnal_max.cpp vanilla_call.cpp)
 target_link_libraries(pricing_server
     pricer_grpc_proto
     ${_REFLECTION}
