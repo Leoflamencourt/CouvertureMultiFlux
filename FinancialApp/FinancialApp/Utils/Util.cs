@@ -1,4 +1,4 @@
-﻿using FinancialApp.Po;
+﻿
 using MarketData;
 using ParameterInfo;
 

@@ -17,7 +17,7 @@ namespace FinancialApp.Grpc
         /// Constructeur pour initialiser le client gRPC.
         /// </summary>
         /// <param name="serverAddress">L'adresse du serveur gRPC.</param>
-        public Pricer(string serverAddress)
+        public Pricer()
         {
             var httpHandler = new HttpClientHandler
             {
@@ -25,7 +25,7 @@ namespace FinancialApp.Grpc
                     HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             };
 
-            var channel = GrpcChannel.ForAddress(serverAddress, new GrpcChannelOptions { HttpHandler = httpHandler });
+            var channel = GrpcChannel.ForAddress("http://localhost:5079", new GrpcChannelOptions { HttpHandler = httpHandler });
             _client = new GrpcPricer.GrpcPricerClient(channel);
         }
 

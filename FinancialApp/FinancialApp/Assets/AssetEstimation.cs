@@ -1,4 +1,4 @@
-﻿using FinancialApp.Portfolio;
+﻿using FinancialApp.Portfolios;
 using System.Diagnostics;
 using System.Xml.Linq;
 
