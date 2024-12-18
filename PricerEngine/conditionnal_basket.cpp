@@ -2,7 +2,7 @@
 #include "conditionnal_basket.h"
 #include <corecrt_math.h>
 
-double  ConditionnalBasket::payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates) {
+double  ConditionnalBasket::payoff(PnlMat *path, double interestRate) {
     int nb_assets = path->m;       
     int nb_payoffs = strikes->size;
 

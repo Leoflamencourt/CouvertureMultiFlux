@@ -6,6 +6,9 @@
 #include "pnl/pnl_matrix.h"
 #include "pnl/pnl_random.h"
 #include "option.h"
+class OptionMultiflux;
+
+
 
 class BlackScholesPricer {
 public:
@@ -21,11 +24,16 @@ public:
     double fdStep;
     int nSamples;
 
+    OptionMultiflux *option_multiflux;
+
     BlackScholesPricer(nlohmann::json &jsonParams);
     ~BlackScholesPricer();
     void generateCorrelatedShocks();
     void asset(const PnlMat *past, double currentDate, bool isMonitoringDate, PnlMat *path);
     void montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path);
+    void perturbAssetPrice(PnlMat *path, const PnlMat *past, double currentDate, bool isMonitoringDate, int assetIndex, double fdStep, bool isUp);
     void priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev);
+    
+
     void print();
 };

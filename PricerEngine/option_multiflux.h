@@ -5,9 +5,8 @@
 
 class OptionMultiflux {
 public:
-    OptionMultiflux(PnlVect *strikes, PnlVect *paymentDates, double interestRate);
-    virtual double payoff(PnlMat *path) = 0;
+    OptionMultiflux(PnlVect *strikes, PnlVect *paymentDates);
+    virtual double payoff(PnlMat *path, double intrestRate)  = 0;
     PnlVect *strikes;
     PnlVect *paymentDates;
-    double interestRate;
 };

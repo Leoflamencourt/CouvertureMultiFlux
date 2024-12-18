@@ -2,7 +2,7 @@
 #include "conditionnal_max.h"
 #include <corecrt_math.h>
 
-double ConditionnalMax::payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates) {
+double ConditionnalMax::payoff(PnlMat *path, double interestRate) {
     int nb_assets = path->m;
     int nb_payoffs = strikes->size;
     

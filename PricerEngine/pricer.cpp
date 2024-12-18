@@ -2,10 +2,20 @@
 #include "pnl/pnl_random.h"
 #include "json_reader.hpp"
 #include "pricer.hpp"
-#include "vanilla_call.h"
+
 #include "conditionnal_max.h"
 #include "conditionnal_basket.h"
-#include "option.h"
+#include "option_multiflux.h"
+
+static OptionMultiflux *createOption(const std::string &payoffType, PnlVect *strikes, PnlVect *paymentDates) {
+    if (payoffType == "ConditionalMax") {
+        return new ConditionnalMax(strikes, paymentDates);
+    } else if (payoffType == "ConditionalBasket") {
+        return new ConditionnalBasket(strikes, paymentDates);
+    } else {
+        throw std::invalid_argument("Unknown payoffType: " + payoffType);
+    }
+}
 
 BlackScholesPricer::BlackScholesPricer(nlohmann::json &jsonParams) {
     jsonParams.at("VolCholeskyLines").get_to(volatility);
@@ -15,8 +25,11 @@ BlackScholesPricer::BlackScholesPricer(nlohmann::json &jsonParams) {
     jsonParams.at("RelativeFiniteDifferenceStep").get_to(fdStep);
     jsonParams.at("SampleNb").get_to(nSamples);
     jsonParams.at("PayoffType").get_to(payoffType);
-    //option = createOption(payoffType, strikes, paymentDates);
-    option = VanillaCall(strikes, paymentDates);
+    
+    option_multiflux = createOption(payoffType, strikes, paymentDates);
+
+
+   
     nAssets = volatility->n;
     mIndependentShocks = pnl_vect_create(nAssets);
     mCorrelatedShocks = pnl_vect_create(nAssets);
@@ -28,6 +41,7 @@ BlackScholesPricer::~BlackScholesPricer() {
     pnl_vect_free(&paymentDates);
     pnl_vect_free(&strikes);
     pnl_mat_free(&volatility);
+    delete option_multiflux;
 }
 
 void BlackScholesPricer::print() {
@@ -56,15 +70,15 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
     pnl_mat_set_subblock(path, past, 0, 0);
 
     // Determine the index of the current date in the paymentDates array
-    int index = past->m - 1; // Assuming timeStep is the granularity of time steps
+    int index = past->n - 1; // Assuming timeStep is the granularity of time steps
 
     PnlVect *lastRow = pnl_vect_create(nAssets);
-    pnl_mat_get_row(lastRow, past, past->m - 1);
+    pnl_mat_get_row(lastRow, past, past->n - 1);
 
     // If the current date is a monitoring date, set the next index for simulation
     int startIndex = isMonitoringDate ? index + 1 : index;
 
-    PnlVect *diffusionTerm = pnl_vect_create(past->n);
+    PnlVect *diffusionTerm = pnl_vect_create(past->m);
 
     double t = currentDate;
 
@@ -95,42 +109,92 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
 
 
 void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path) {
-
     double runningSum = 0;
     double runningSquaredSum = 0;
-    double payoff = 0;
+
+    // Simulate multiple paths and calculate payoffs
     for (unsigned long i = 0; i < nSamples; i++) {
+        // Generate a path using the asset method
         asset(past, currentDate, isMonitoringDate, path);
-        
+
+        // Calculate the payoff using the generic option's payoff method
+        double payoff = option_multiflux->payoff(path, interestRate);
+
         runningSum += payoff;
         runningSquaredSum += payoff * payoff;
     }
-    double maturity = GET(paymentDates,paymentDates->size -1);
+
+    double maturity = GET(paymentDates, paymentDates->size - 1);
+
+    // Discount the average payoff to the present value
     price = exp(-1 * interestRate * (maturity - currentDate)) * runningSum / nSamples;
-    double variance = exp(-2 * interestRate * maturity) * runningSquaredSum / nSamples - price * price;
+
+    // Calculate the variance and standard deviation
+    double variance = (runningSquaredSum / nSamples) - (runningSum / nSamples) * (runningSum / nSamples);
     priceStdDev = 1.96 * sqrt(variance / nSamples);
 }
 
 
 
-//std::unique_ptr<Option> createOption(const std::string &payoffType, PnlVect *strikes, PnlVect *paymentDates) {
-//    if (payoffType == "ConditionalMax") {
-//        return std::make_unique<ConditionnalMax>(strikes, paymentDates);
-//    } else if (payoffType == "ConditionalBasket") {
-//        return std::make_unique<ConditionnalBasket>(strikes, paymentDates);
-//    } else if (payoffType == "VanillaCall") {
-//        return std::make_unique<VanillaCall>(strikes, paymentDates);
-//    } else {
-//        throw std::invalid_argument("Unknown payoffType: " + payoffType);
-//    }
-//}
 
-void BlackScholesPricer::priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev) {
+
+
+void BlackScholesPricer::perturbAssetPrice(PnlMat *path, const PnlMat *past, double currentDate, bool isMonitoringDate, int assetIndex, double fdStep, bool isUp) {
+    PnlVect *lastRow = pnl_vect_create(nAssets);
+    pnl_mat_get_row(lastRow, past, past->m - 1);
+
+    double perturbFactor = isUp ? (1 + fdStep) : (1 - fdStep);
+    double perturbedPrice = GET(lastRow, assetIndex) * perturbFactor;
+    pnl_vect_set(lastRow, assetIndex, perturbedPrice);
+
+    pnl_mat_set_row(path, lastRow, past->m - 1);
+
+    // Generate future path using the perturbed lastRow
+    asset(past, currentDate, isMonitoringDate, path);
+
+    pnl_vect_free(&lastRow);
+}
+
+
+void BlackScholesPricer::priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect *&deltas, PnlVect *&deltasStdDev) {
     price = 0.0;
     priceStdDev = 0.0;
     deltas = pnl_vect_create_from_zero(nAssets);
     deltasStdDev = pnl_vect_create_from_zero(nAssets);
-    /* A compléter */
-    PnlMat* path = pnl_mat_create_from_zero(paymentDates->size, nAssets);
 
+    PnlMat *path = pnl_mat_create_from_zero(paymentDates->size, nAssets);
+    double basePrice = 0.0, basePriceStdDev = 0.0;
+
+    // Compute the base price
+    montecarlo(past, currentDate, isMonitoringDate, basePrice, basePriceStdDev, path);
+
+    // Loop through each asset to calculate deltas using finite differences
+    for (int d = 0; d < nAssets; d++) {
+        // Perturb the underlying asset price upward
+        PnlMat *pathPlus = pnl_mat_copy(path);
+        PnlMat *pathMinus = pnl_mat_copy(path);
+        perturbAssetPrice(pathPlus, past, currentDate, isMonitoringDate, d, fdStep, true);
+        perturbAssetPrice(pathMinus, past, currentDate, isMonitoringDate, d, fdStep, false);
+
+        // Calculate the payoff for perturbed prices
+        double pricePlus = 0.0, pricePlusStdDev = 0.0;
+        double priceMinus = 0.0, priceMinusStdDev = 0.0;
+        montecarlo(past, currentDate, isMonitoringDate, pricePlus, pricePlusStdDev, pathPlus);
+        montecarlo(past, currentDate, isMonitoringDate, priceMinus, priceMinusStdDev, pathMinus);
+
+        // Calculate delta using finite differences
+        double s = MGET(past, past->m - 1, d); // Current asset price
+        double delta = (pricePlus - priceMinus) / (2 * s * fdStep);
+        LET(deltas, d) = delta;
+
+        // Cleanup
+        pnl_mat_free(&pathPlus);
+        pnl_mat_free(&pathMinus);
+    }
+
+    // Set final price and standard deviation
+    price = basePrice;
+    priceStdDev = basePriceStdDev;
+
+    pnl_mat_free(&path);
 }

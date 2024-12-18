@@ -2,6 +2,10 @@
 
 #include "option_multiflux.h"
 
-static class ConditionnalMax : public OptionMultiflux {
-    double payoff(PnlMat *path, PnlVect *strikes, PnlVect *paymentDates);
+class ConditionnalMax : public OptionMultiflux {
+public:
+    ConditionnalMax(PnlVect *strikes, PnlVect *paymentDates)
+        : OptionMultiflux(strikes, paymentDates) {}
+
+    double payoff(PnlMat *path, double interestRate) override;
 };
