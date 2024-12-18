@@ -10,6 +10,5 @@ private:
 
 public :
     Option(PnlVect *strikes, PnlVect *paymentDates);
-    virtual ~Option();
     void virtual payoff(PnlMat *path) = 0;
 };
