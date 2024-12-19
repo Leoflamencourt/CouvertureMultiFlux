@@ -134,11 +134,6 @@ void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool
     priceStdDev = 1.96 * sqrt(variance / nSamples);
 }
 
-
-
-
-
-
 void BlackScholesPricer::perturbAssetPrice(PnlMat *path, const PnlMat *past, double currentDate, bool isMonitoringDate, int assetIndex, double fdStep, bool isUp) {
     PnlVect *lastRow = pnl_vect_create(nAssets);
     pnl_mat_get_row(lastRow, past, past->m - 1);

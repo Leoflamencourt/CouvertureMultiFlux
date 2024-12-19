@@ -95,4 +95,9 @@ target_link_libraries(test_json_reader
 )
 pnl_add_postbuild(test_json_reader)
 
-
+add_executable(test_payoff test_payoffs.cpp json_reader.cpp pricer.cpp conditionnal_basket.cpp conditionnal_max.cpp option_multiflux.cpp)
+target_link_libraries(test_payoff
+    ${PNL_LIBRARIES}
+    nlohmann_json::nlohmann_json
+)
+pnl_add_postbuild(test_payoff)
