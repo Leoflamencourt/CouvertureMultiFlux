@@ -101,3 +101,10 @@ target_link_libraries(test_payoff
     nlohmann_json::nlohmann_json
 )
 pnl_add_postbuild(test_payoff)
+
+add_executable(test_asset test_asset.cpp json_reader.cpp pricer.cpp conditionnal_basket.cpp conditionnal_max.cpp option_multiflux.cpp)
+target_link_libraries(test_asset
+    ${PNL_LIBRARIES}
+    nlohmann_json::nlohmann_json
+)
+pnl_add_postbuild(test_asset)

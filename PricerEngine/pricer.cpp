@@ -27,9 +27,6 @@ BlackScholesPricer::BlackScholesPricer(nlohmann::json &jsonParams) {
     jsonParams.at("PayoffType").get_to(payoffType);
     
     option_multiflux = createOption(payoffType, strikes, paymentDates);
-
-
-   
     nAssets = volatility->n;
     mIndependentShocks = pnl_vect_create(nAssets);
     mCorrelatedShocks = pnl_vect_create(nAssets);
@@ -69,12 +66,21 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
     // Copy the past data into the path matrix
     pnl_mat_set_subblock(path, past, 0, 0);
 
+    std::cout << "Generated Path Matrix:" << std::endl;
+    for (int i = 0; i < path->m; ++i) {     // Iterate over rows (assets)
+        for (int j = 0; j < path->n; ++j) { // Iterate over columns (time steps)
+            std::cout << pnl_mat_get(path, i, j) << "\t";
+        }
+        std::cout << std::endl;
+    }
+
     // Determine the index of the current date in the paymentDates array
     int index = past->n - 1; // Assuming timeStep is the granularity of time steps
 
     PnlVect *lastRow = pnl_vect_create(nAssets);
     pnl_mat_get_row(lastRow, past, past->n - 1);
 
+    
     // If the current date is a monitoring date, set the next index for simulation
     int startIndex = isMonitoringDate ? index + 1 : index;
 
@@ -105,8 +111,6 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
     pnl_vect_free(&lastRow);
     pnl_vect_free(&diffusionTerm);
 }
-
-
 
 void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path) {
     double runningSum = 0;
@@ -149,7 +153,6 @@ void BlackScholesPricer::perturbAssetPrice(PnlMat *path, const PnlMat *past, dou
 
     pnl_vect_free(&lastRow);
 }
-
 
 void BlackScholesPricer::priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect *&deltas, PnlVect *&deltasStdDev) {
     price = 0.0;
