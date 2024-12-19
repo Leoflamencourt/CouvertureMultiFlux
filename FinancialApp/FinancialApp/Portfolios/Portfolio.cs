@@ -64,7 +64,7 @@ namespace FinancialApp.Portfolios
             double portfolioValue = portfolio.Value(dataFeed.SpotList);
 
             // Mettre à jour le cash disponible après réévaluation
-            double updatedCash = 0; //TODO Revoir le cash 
+            double updatedCash = portfolioValue; //TODO Revoir le cash 
 
             // Mettre à jour le portefeuille
             portfolio.AssetProportions = updatedProportions;

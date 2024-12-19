@@ -66,66 +66,105 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
     // Copy the past data into the path matrix
     pnl_mat_set_subblock(path, past, 0, 0);
 
-    std::cout << "Generated Path Matrix:" << std::endl;
-    for (int i = 0; i < path->m; ++i) {     // Iterate over rows (assets)
-        for (int j = 0; j < path->n; ++j) { // Iterate over columns (time steps)
-            std::cout << pnl_mat_get(path, i, j) << "\t";
-        }
-        std::cout << std::endl;
-    }
-
     // Determine the index of the current date in the paymentDates array
     int index = past->n - 1; // Assuming timeStep is the granularity of time steps
 
     PnlVect *lastRow = pnl_vect_create(nAssets);
-    pnl_mat_get_row(lastRow, past, past->n - 1);
-
+    pnl_mat_get_col(lastRow, past, past->n - 1);
+    
     
     // If the current date is a monitoring date, set the next index for simulation
     int startIndex = isMonitoringDate ? index + 1 : index;
 
-    PnlVect *diffusionTerm = pnl_vect_create(past->m);
+   
 
     double t = currentDate;
 
-    for (int i = startIndex; i < paymentDates->size; i++) { 
-        double t_next = GET(paymentDates, i); 
+    for (int i = startIndex; i < paymentDates->size+1; i++) { 
+        double t_next = GET(paymentDates, i-1); 
 
         double dt = t_next - t; 
         double sqrtDt = std::sqrt(dt);
 
         generateCorrelatedShocks();
 
-        for (int d = 0; d < nAssets; d++) { // For each asset
-            double drift = (interestRate - 0.5 * pnl_mat_get(volatility, d, d) * pnl_mat_get(volatility, d, d)) * dt;
-            double diffusion = pnl_vect_get(diffusionTerm, d) * sqrtDt;
+        for (int d = 0; d <nAssets; d++) { // For each asset
+            PnlMat *volatility_t = pnl_mat_create(1, 1);
+            volatility_t = pnl_mat_copy(volatility);
+            volatility_t = pnl_mat_transpose(volatility_t);
+            double sigma2 = MGET(pnl_mat_mult_mat(volatility, volatility_t), d, d);
+           
+            double drift = (interestRate - 0.5 * sigma2)* dt;
+            PnlVect *LD = pnl_vect_create(0);
+            pnl_mat_get_row(LD, volatility, d);
+         
+            double diffusion = pnl_vect_scalar_prod(LD, mIndependentShocks )* sqrtDt;
+
             double S_t = pnl_vect_get(lastRow, d); 
             double S_tNext = S_t * exp(drift + diffusion);
-
-            pnl_mat_set(path, i, d, S_tNext); 
+            
+            pnl_mat_set(path, d, i, S_tNext); 
+            
         }
-
-        pnl_mat_get_row(lastRow, path, i);
+      
+        
+        pnl_mat_get_col(lastRow, path, i);
+      
         t = t_next;
     }
     pnl_vect_free(&lastRow);
-    pnl_vect_free(&diffusionTerm);
+   
 }
 
-void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path) {
+void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect *deltas, PnlVect *deltasStdDev) {
     double runningSum = 0;
     double runningSquaredSum = 0;
 
-    // Simulate multiple paths and calculate payoffs
+    PnlMat *path = pnl_mat_create(nAssets, paymentDates->size+1);
+
+    // Initialisez les vecteurs pour les sommes et les sommes quadratiques des deltas
+    pnl_vect_resize(deltas, nAssets);
+    pnl_vect_resize(deltasStdDev, nAssets);
+    pnl_vect_set_all(deltas, 0.0);
+    PnlVect *runningDeltaSquaredSum = pnl_vect_create_from_zero(nAssets);
+
+    // Simulez plusieurs chemins et calculez payoffs + deltas
     for (unsigned long i = 0; i < nSamples; i++) {
-        // Generate a path using the asset method
+        // Génération du chemin standard
         asset(past, currentDate, isMonitoringDate, path);
 
-        // Calculate the payoff using the generic option's payoff method
+        // Calcul du payoff standard
         double payoff = option_multiflux->payoff(path, interestRate);
-
+       
         runningSum += payoff;
+        /*std::cout << payoff << std::endl;
+        pnl_mat_print(path);*/
         runningSquaredSum += payoff * payoff;
+
+        PnlMat *pathPlus = pnl_mat_copy(path);
+        PnlMat *pathMinus = pnl_mat_copy(path);
+
+        // Calcul des deltas par différences finies pour chaque actif
+        for (int j = 0; j < nAssets; j++) {
+            // Perturber le prix de l'actif j
+            perturbAssetPrice(pathPlus, fdStep, true, j, past->n - 1);
+            perturbAssetPrice(pathMinus, fdStep, false, j, past->n - 1);
+
+            // Payoffs avec perturbations
+            double payoffPlus = option_multiflux->payoff(pathPlus, interestRate);
+            double payoffMinus = option_multiflux->payoff(pathMinus, interestRate);
+
+            // Contribution au delta pour l'actif j
+            double deltaContribution = (payoffPlus - payoffMinus) / (2 * MGET(past, j, past->n - 1) * fdStep);
+            LET(deltas, j) += deltaContribution;
+
+            // Mise à jour de la somme des carrés des deltas pour l'écart-type
+            double deltaSquaredContribution = deltaContribution * deltaContribution;
+            LET(runningDeltaSquaredSum, j) = deltaSquaredContribution;
+        }
+
+        pnl_mat_free(&pathPlus);
+        pnl_mat_free(&pathMinus);
     }
 
     double maturity = GET(paymentDates, paymentDates->size - 1);
@@ -133,66 +172,44 @@ void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool
     // Discount the average payoff to the present value
     price = exp(-1 * interestRate * (maturity - currentDate)) * runningSum / nSamples;
 
-    // Calculate the variance and standard deviation
+    // Calculate the variance and standard deviation for the price
     double variance = (runningSquaredSum / nSamples) - (runningSum / nSamples) * (runningSum / nSamples);
-    priceStdDev = 1.96 * sqrt(variance / nSamples);
+    priceStdDev = exp(-2 * interestRate * (maturity - currentDate))* sqrt(variance / nSamples);
+
+    // Moyenne et actualisation des deltas + calcul de l'écart-type
+    for (int j = 0; j < nAssets; j++) {
+        // Moyenne et actualisation des deltas
+        LET(deltas, j) *= exp(-1 * interestRate * (maturity - currentDate)) / nSamples;
+
+        // Variance pour le delta
+        double meanDelta = LET(deltas, j);
+        double deltaVariance = (GET(runningDeltaSquaredSum, j) / nSamples) - meanDelta * meanDelta;
+
+        // Écart-type pour le delta
+        LET(deltasStdDev, j) =   sqrt(deltaVariance / nSamples);
+    }
+
+    pnl_mat_free(&path);
+    pnl_vect_free(&runningDeltaSquaredSum);
 }
 
-void BlackScholesPricer::perturbAssetPrice(PnlMat *path, const PnlMat *past, double currentDate, bool isMonitoringDate, int assetIndex, double fdStep, bool isUp) {
-    PnlVect *lastRow = pnl_vect_create(nAssets);
-    pnl_mat_get_row(lastRow, past, past->m - 1);
 
+void BlackScholesPricer::perturbAssetPrice(PnlMat *path, double fdStep, bool isUp, int assetIndex, int lastIndex) {
+    // Définir le facteur de perturbation
     double perturbFactor = isUp ? (1 + fdStep) : (1 - fdStep);
-    double perturbedPrice = GET(lastRow, assetIndex) * perturbFactor;
-    pnl_vect_set(lastRow, assetIndex, perturbedPrice);
 
-    pnl_mat_set_row(path, lastRow, past->m - 1);
-
-    // Generate future path using the perturbed lastRow
-    asset(past, currentDate, isMonitoringDate, path);
-
-    pnl_vect_free(&lastRow);
+    // Perturber uniquement l'actif spécifié (ligne assetIndex) à partir de la colonne lastIndex
+    for (int col = lastIndex; col < path->n; ++col) {
+        MLET(path, assetIndex, col) *= perturbFactor; // Multiplier chaque élément par le facteur
+    }
 }
 
 void BlackScholesPricer::priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect *&deltas, PnlVect *&deltasStdDev) {
-    price = 0.0;
-    priceStdDev = 0.0;
-    deltas = pnl_vect_create_from_zero(nAssets);
-    deltasStdDev = pnl_vect_create_from_zero(nAssets);
 
-    PnlMat *path = pnl_mat_create_from_zero(paymentDates->size, nAssets);
-    double basePrice = 0.0, basePriceStdDev = 0.0;
 
-    // Compute the base price
-    montecarlo(past, currentDate, isMonitoringDate, basePrice, basePriceStdDev, path);
+    
+    montecarlo(past, currentDate, isMonitoringDate, price, priceStdDev, deltas, deltasStdDev);
 
-    // Loop through each asset to calculate deltas using finite differences
-    for (int d = 0; d < nAssets; d++) {
-        // Perturb the underlying asset price upward
-        PnlMat *pathPlus = pnl_mat_copy(path);
-        PnlMat *pathMinus = pnl_mat_copy(path);
-        perturbAssetPrice(pathPlus, past, currentDate, isMonitoringDate, d, fdStep, true);
-        perturbAssetPrice(pathMinus, past, currentDate, isMonitoringDate, d, fdStep, false);
 
-        // Calculate the payoff for perturbed prices
-        double pricePlus = 0.0, pricePlusStdDev = 0.0;
-        double priceMinus = 0.0, priceMinusStdDev = 0.0;
-        montecarlo(past, currentDate, isMonitoringDate, pricePlus, pricePlusStdDev, pathPlus);
-        montecarlo(past, currentDate, isMonitoringDate, priceMinus, priceMinusStdDev, pathMinus);
-
-        // Calculate delta using finite differences
-        double s = MGET(past, past->m - 1, d); // Current asset price
-        double delta = (pricePlus - priceMinus) / (2 * s * fdStep);
-        LET(deltas, d) = delta;
-
-        // Cleanup
-        pnl_mat_free(&pathPlus);
-        pnl_mat_free(&pathMinus);
-    }
-
-    // Set final price and standard deviation
-    price = basePrice;
-    priceStdDev = basePriceStdDev;
-
-    pnl_mat_free(&path);
+    
 }

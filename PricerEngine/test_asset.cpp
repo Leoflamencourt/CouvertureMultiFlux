@@ -13,21 +13,44 @@ int main(int argc, char **argv) {
     nlohmann::json j = nlohmann::json::parse(ifs);
     BlackScholesPricer blackScholesPricer = BlackScholesPricer(j);
 
-    PnlMat *pastInvented = pnl_mat_create_from_scalar(blackScholesPricer.nAssets, 1, 100.0);
+   PnlMat *pastInvented = pnl_mat_create(blackScholesPricer.nAssets, 1);
 
-    PnlMat *path = pnl_mat_create(blackScholesPricer.nAssets, blackScholesPricer.paymentDates->size);
+    // Initialisation des valeurs de la première colonne
+    MLET(pastInvented, 0, 0) = 13; // Actif 0, colonne 0
+    MLET(pastInvented, 1, 0) = 15; // Actif 1, colonne 0
+    MLET(pastInvented, 2, 0) = 17; // Actif 2, colonne 0
+    MLET(pastInvented, 3, 0) = 17; // Actif 3, colonne 0
+    MLET(pastInvented, 4, 0) = 14; // Actif 4, colonne 0
+    PnlMat *path = pnl_mat_create(blackScholesPricer.nAssets, blackScholesPricer.paymentDates->size+1);
 
-    blackScholesPricer.asset(pastInvented, 0.2, false, path);
+    double currentDate = 0;
+   // blackScholesPricer.asset(pastInvented, currentDate, false, path);
 
-    // Print the generated path matrix
-    std::cout << "Generated Path Matrix:" << std::endl;
-    for (int i = 0; i < path->m; ++i) {     // Iterate over rows (assets)
-        for (int j = 0; j < path->n; ++j) { // Iterate over columns (time steps)
-            std::cout << pnl_mat_get(path, i, j) << "\t";
-        }
-        std::cout << std::endl;
+    
+
+    double price;
+    double stddev;
+
+
+
+    PnlVect *deltas = pnl_vect_create(blackScholesPricer.nAssets);
+    PnlVect *detlasStddev = pnl_vect_create(blackScholesPricer.nAssets);
+
+    blackScholesPricer.priceAndDeltas(pastInvented, currentDate, true, price, stddev, deltas, detlasStddev);
+    blackScholesPricer.print();
+
+    std::cout << "Overall results for priceAndDeltas call : " << std::endl;
+    std::cout << "The price : " << price << std::endl;
+    std::cout << "The stddev : " << stddev << std::endl;
+    std::cout << "Deltas:" << std::endl;
+    
+    for (int i = 0; i < deltas->size; i++) {
+        std::cout << GET(deltas, i) << "\t";
     }
-
+    std::cout << "Deltas Stddev:" << std::endl;
+    for (int i = 0; i < deltas->size; i++) {
+        std::cout << GET(detlasStddev, i) << "\t";
+    }
     exit(0);
 }
 

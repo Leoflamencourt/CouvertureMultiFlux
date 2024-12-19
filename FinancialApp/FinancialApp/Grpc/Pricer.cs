@@ -14,6 +14,7 @@ namespace FinancialApp.Grpc
     public class Pricer : IPricer
     {
         private readonly GrpcPricer.GrpcPricerClient _client;
+        private readonly GrpcChannel _channel;
 
         /// <summary>
         /// Constructeur pour initialiser le client gRPC.
@@ -27,8 +28,9 @@ namespace FinancialApp.Grpc
                     HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             };
 
-            var channel = GrpcChannel.ForAddress("http://localhost:5079", new GrpcChannelOptions { HttpHandler = httpHandler });
-            _client = new GrpcPricer.GrpcPricerClient(channel);
+            _channel = GrpcChannel.ForAddress("http://localhost:5079", new GrpcChannelOptions { HttpHandler = httpHandler });
+           
+            _client = new GrpcPricer.GrpcPricerClient(_channel);
         }
 
         /// <summary>

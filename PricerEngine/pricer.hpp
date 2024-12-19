@@ -30,8 +30,8 @@ public:
     ~BlackScholesPricer();
     void generateCorrelatedShocks();
     void asset(const PnlMat *past, double currentDate, bool isMonitoringDate, PnlMat *path);
-    void montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlMat *path);
-    void perturbAssetPrice(PnlMat *path, const PnlMat *past, double currentDate, bool isMonitoringDate, int assetIndex, double fdStep, bool isUp);
+    void montecarlo(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect *deltas, PnlVect *deltasStdDev);
+    void perturbAssetPrice(PnlMat *path, double fdStep, bool isUp, int assetIndex, int lastIndex);
     void priceAndDeltas(const PnlMat *past, double currentDate, bool isMonitoringDate, double &price, double &priceStdDev, PnlVect* &deltas, PnlVect* &deltasStdDev);
     
 
