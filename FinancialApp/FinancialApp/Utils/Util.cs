@@ -1,6 +1,8 @@
 ﻿
+using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
+using TimeHandler;
 
 namespace Utils
 {
@@ -35,8 +37,43 @@ namespace Utils
             return Composition;
         }
 
+        public static Dictionary<string, double> TransformDelta(Dictionary<string, int> idPositions, PricingOutput pricingOutput)
+        {
+            // Créer un dictionnaire pour stocker les deltas associés à leurs identifiants
+            Dictionary<string, double> deltaDictionary = new Dictionary<string, double>();
 
+            foreach (var idPosition in idPositions)
+            {
+                string id = idPosition.Key;
+                int position = idPosition.Value;
 
+                if (position >= 0 && position < pricingOutput.Deltas.Count)
+                {
+                    deltaDictionary[id] = pricingOutput.Deltas[position];
+                }
+            }
+
+            return deltaDictionary;
+        }
+
+        public static Dictionary<string, double> TransformDeltaStdDev(Dictionary<string, int> idPositions, PricingOutput pricingOutput)
+        {
+            // Créer un dictionnaire pour stocker les DeltaStdDev associés à leurs identifiants
+            Dictionary<string, double> deltaStdDevDictionary = new Dictionary<string, double>();
+
+            foreach (var idPosition in idPositions)
+            {
+                string id = idPosition.Key;
+                int position = idPosition.Value;
+
+                if (position >= 0 && position < pricingOutput.DeltasStdDev.Count)
+                {
+                    deltaStdDevDictionary[id] = pricingOutput.DeltasStdDev[position];
+                }
+            }
+
+            return deltaStdDevDictionary;
+        }
 
 
         /// <summary>
@@ -45,12 +82,10 @@ namespace Utils
         /// <returns> double representing the new cash value. </returns>
         public static double CapitalizedCash(double oldCash, DateTime lastRebalancingDate, DateTime currentDate, TestParameters testParameters, string devise)
         {
-            double daysPerYears = testParameters.NumberOfDaysInOneYear;
-            double dayswork= TimeHandler.DayCount.CountBusinessDays(lastRebalancingDate,currentDate);
+            int daysPerYears = testParameters.NumberOfDaysInOneYear;
             double riskFreeRate = testParameters.AssetDescription.CurrencyRates[devise];
-            var appreciatedValue =dayswork/daysPerYears;
-            
-            return oldCash * appreciatedValue * riskFreeRate;
+            double totalDays= (lastRebalancingDate - currentDate).TotalDays;
+            return oldCash * Math.Exp(totalDays/daysPerYears * riskFreeRate);
         }
 
 

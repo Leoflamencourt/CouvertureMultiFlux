@@ -29,9 +29,8 @@ class Program
         List<DataFeed> dataFeeds = csvDeserializer.Deserialize(marketDataPath);
         HedgingEngine hedgingEngine = new HedgingEngine();
 
-        List<OutputData> outputDatas= hedgingEngine.ComputePortfolio(financialParams, dataFeeds );
-        //tofo HedgingEngine
-
+        List<OutputData> outputDatas= await  hedgingEngine.ComputePortfolio(financialParams, dataFeeds );
+        
 
 
         //write result 

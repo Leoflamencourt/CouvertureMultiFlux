@@ -1,4 +1,5 @@
 ﻿using FinancialApp.Assets;
+using FinancialApp.Grpc;
 using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
@@ -39,7 +40,7 @@ namespace FinancialApp.Portfolios
             return result;
         }
 
-        public void UpdatePortfolio(Portfolio portfolio, DataFeed dataFeed, PricingOutput pricingResults, TestParameters financialParams)
+        public void UpdatePortfolio(Portfolio portfolio, DataFeed dataFeed, PriceEstimation pricingResults, TestParameters financialParams)
         {
             // Mettre à jour les proportions des actifs selon les nouveaux prix
             Dictionary<string, double> updatedProportions = new Dictionary<string, double>();

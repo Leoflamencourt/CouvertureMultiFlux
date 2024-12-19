@@ -6,6 +6,8 @@ using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
 using FinancialApp.Utils.Serialization;
+using FinancialApp.Utils;
+using Utils;
 
 namespace FinancialApp.Grpc
 {
@@ -36,7 +38,7 @@ namespace FinancialApp.Grpc
         /// <param name="currentDate">La date actuelle.</param>
         /// <param name="testParameters">Les paramètres de test.</param>
         /// <returns>Un objet PricingOutput contenant les résultats.</returns>
-        public async Task<PricingOutput> PriceandDeltaAsync(List<DataFeed> subDataFeeds, DateTime currentDate, TestParameters testParameters)
+        public async Task<PriceEstimation> PriceandDeltaAsync(List<DataFeed> subDataFeeds, DateTime currentDate, TestParameters testParameters)
         {
             // Sérialisation de l'entrée
             PricingInputSerializer serializer = new PricingInputSerializer();
@@ -47,7 +49,15 @@ namespace FinancialApp.Grpc
             {
                 // Appel au serveur gRPC pour obtenir les PricingOutput
                 PricingOutput response = await _client.PriceAndDeltasAsync(input);
-                return response;
+                PriceEstimation result = new PriceEstimation
+                {
+                    Price = response.Price,
+                    PriceStdDev = response.PriceStdDev,
+                    Deltas = Util.TransformDelta(testParameters.PricingParams.UnderlyingPositions, response),
+                    DeltaStdDevs = Util.TransformDeltaStdDev(testParameters.PricingParams.UnderlyingPositions, response)
+                };
+                
+                return result;
             }
             catch (Exception ex)
             {

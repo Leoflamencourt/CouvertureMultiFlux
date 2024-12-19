@@ -10,6 +10,6 @@ namespace FinancialApp.Grpc
     public interface IPricer
     {
        
-        Task<PricingOutput> PriceandDeltaAsync(List<DataFeed> dataFeeds, DateTime currentDate, TestParameters testParameters);
+        Task<PriceEstimation> PriceandDeltaAsync(List<DataFeed> dataFeeds, DateTime currentDate, TestParameters testParameters);
     }
 }
