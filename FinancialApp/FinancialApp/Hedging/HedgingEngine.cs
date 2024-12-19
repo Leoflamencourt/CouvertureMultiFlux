@@ -46,10 +46,6 @@ namespace FinancialApp.Services
             // Calculer l'investissement initial restant : prix - delta * spot initial
             double initialInvestment = initialPricingResults.Price;
             Dictionary<string, double> initialProportions = initialPricingResults.Deltas;
-            foreach (var assetId in initialPricingResults.Deltas.Keys)
-            {
-                initialInvestment -= initialPricingResults.Deltas[assetId] * initialDataFeed.SpotList[assetId];
-            }
 
             // Initialiser le portefeuille
             Portfolio portfolio = new Portfolio(initialDataFeed, initialInvestment, initialProportions, financialParams, currentDate);
