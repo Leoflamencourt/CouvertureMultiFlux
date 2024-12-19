@@ -16,7 +16,7 @@ namespace FinancialApp.Assets
             PriceStdDev = priceStdDev;
         }
 
-        public abstract Dictionary<string, double> GetUpdatedProportions();
+       
 
     }
 }

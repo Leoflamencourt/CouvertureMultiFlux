@@ -1,4 +1,5 @@
 ﻿using FinancialApp.Assets;
+using FinancialApp.Grpc;
 using GrpcPricing.Protos;
 using MarketData;
 using ParameterInfo;
@@ -39,7 +40,7 @@ namespace FinancialApp.Portfolios
             return result;
         }
 
-        public void UpdatePortfolio(Portfolio portfolio, DataFeed dataFeed, PricingOutput pricingResults, TestParameters financialParams)
+        public void UpdatePortfolio(Portfolio portfolio, DataFeed dataFeed, PriceEstimation pricingResults, TestParameters financialParams)
         {
             // Mettre à jour les proportions des actifs selon les nouveaux prix
             Dictionary<string, double> updatedProportions = new Dictionary<string, double>();
@@ -63,7 +64,7 @@ namespace FinancialApp.Portfolios
             double portfolioValue = portfolio.Value(dataFeed.SpotList);
 
             // Mettre à jour le cash disponible après réévaluation
-            double updatedCash = portfolio.Cash + (pricingResults.Price - portfolioValue);
+            double updatedCash = 0; //TODO Revoir le cash 
 
             // Mettre à jour le portefeuille
             portfolio.AssetProportions = updatedProportions;
