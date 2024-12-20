@@ -48,11 +48,14 @@ namespace FinancialApp.Grpc
             PricingInputSerializer serializer = new PricingInputSerializer();
             PricingInput input = serializer.Serialize(subDataFeeds, testParameters);
             // Appel au serveur gRPC pour obtenir les PricingOutput
+            Console.WriteLine($"date:{input.Time}");
             Console.WriteLine($"past_size: {input.Past.Count}");
             foreach (var line in input.Past)
             {
                 Console.WriteLine($"line size: {line.Value.Count}");
             }
+            
+            
             PricingOutput response = await _client.PriceAndDeltasAsync(input);
             
 

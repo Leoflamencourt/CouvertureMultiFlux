@@ -24,6 +24,15 @@ int main(int argc, char **argv) {
     MLET(pastInvented, 5, 0) = 18; // Actif 4, colonne 0
     MLET(pastInvented, 6, 0) = 19; 
     MLET(pastInvented, 7, 0) = 17; 
+
+    MLET(pastInvented, 0, 0) = 11.82; // Actif 0, colonne 0
+    MLET(pastInvented, 1, 0) = 10.17; // Actif 1, colonne 0
+    MLET(pastInvented, 2, 0) = 15.81; // Actif 2, colonne 0
+    MLET(pastInvented, 3, 0) = 15.71; // Actif 3, colonne 0
+    MLET(pastInvented, 4, 0) = 14.04;
+    MLET(pastInvented, 5, 0) = 18.27; // Actif 4, colonne 0
+    MLET(pastInvented, 6, 0) = 19.02;
+    MLET(pastInvented, 7, 0) = 16.77;
     //// Initialisation des valeurs de la première colonne
     //MLET(pastInvented, 0, 1) = 13,3; // Actif 0, colonne 0
     //MLET(pastInvented, 1, 1) = 15; // Actif 1, colonne 0

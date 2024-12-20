@@ -51,7 +51,7 @@ namespace FinancialApp.Services
             Portfolio portfolio = new Portfolio(initialDataFeed, initialInvestment, initialProportions, financialParams, currentDate);
 
             // Initialiser l'oracle de rebalancement
-            IRebalancingOracleBase rebalancingOracle = new FixedRebalancingOracle(financialParams.RebalancingOracleDescription.Period, currentDate);
+            IRebalancingOracleBase rebalancingOracle = new FixedRebalancingOracle(financialParams.RebalancingOracleDescription.Period);
 
             List<OutputData> outputDataList = new List<OutputData>();
             PriceEstimation lastPricingResults = initialPricingResults;

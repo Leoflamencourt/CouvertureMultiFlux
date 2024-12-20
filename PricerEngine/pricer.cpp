@@ -75,7 +75,7 @@ void BlackScholesPricer::asset(const PnlMat *past, double currentDate, bool isMo
     // If the current date is a monitoring date, set the next index for simulation
     int startIndex = isMonitoringDate ? index + 1 : index;
 
-   
+  
 
     double t = currentDate;
 
@@ -132,8 +132,7 @@ void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool
     for (int i = 0; i < nSamples; ++i) {
         // Génération du chemin standard
         asset(past, currentDate, isMonitoringDate, path);
-     
-
+      
         // Calcul du payoff standard
         double payoff = option_multiflux->payoff(path, interestRate);
         runningSum += payoff;
@@ -177,14 +176,19 @@ void BlackScholesPricer::montecarlo(const PnlMat *past, double currentDate, bool
 
     // Moyenne et actualisation des deltas
     pnl_vect_mult_scalar(deltas, 1.0 / nSamples);
+    pnl_vect_print(deltas);
     pnl_vect_mult_scalar(deltasStdDev, 1.0 / nSamples);
     PnlVect *deltaMeanSquared = pnl_vect_copy(deltas);
     pnl_vect_mult_vect_term(deltaMeanSquared, deltaMeanSquared);
+
+    pnl_vect_print(deltaMeanSquared);
+
+   
     pnl_vect_minus_vect(deltasStdDev, deltaMeanSquared);
     
     
     for (int i = 0; i < nAssets; ++i) {
-        LET(deltasStdDev, i) = exp(-2 * interestRate * (T - currentDate)) *sqrt(abs(GET(deltasStdDev, i)));
+        LET(deltasStdDev, i) = exp(-2 * interestRate * (T - currentDate)) *sqrt(abs(GET(deltasStdDev, i)/nSamples));
 
     }
     pnl_vect_mult_scalar(deltas, exp(-interestRate * (T - currentDate)));

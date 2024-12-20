@@ -1,3 +1,9 @@
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.AssemblyReference.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfoInputs.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfo.cs
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.CoreCompileInputs.cache
+C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.sourcelink.json
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\FinancialApp.exe
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\FinancialApp.deps.json
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\FinancialApp.runtimeconfig.json
@@ -11,12 +17,6 @@ C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\MathNet.Numerics.dll
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\bin\Debug\net8.0\MultiCashFlow.Common.dll
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.AssemblyReference.cache
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfoInputs.cache
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.AssemblyInfo.cs
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.csproj.CoreCompileInputs.cache
-C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.sourcelink.json
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\Financia.FD378251.Up2Date
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\FinancialApp.dll
 C:\Users\leo\Desktop\CouvertureMultiFlux\FinancialApp\FinancialApp\obj\Debug\net8.0\refint\FinancialApp.dll
