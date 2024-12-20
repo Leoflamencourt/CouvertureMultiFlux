@@ -16,7 +16,7 @@ namespace FinancialApp.Utils
             for (int i = 0; i < subdataFeeds.Count - 1; ++i)
             {
                 DataFeed dataFeed = subdataFeeds[i];
-                if (parameters.PayoffDescription.PaymentDates.Contains(dataFeed.Date)) { 
+                if (parameters.PayoffDescription.PaymentDates.Contains(dataFeed.Date) ||dataFeed.Date==parameters.PayoffDescription.CreationDate) { 
                     past.Add(dataFeed);
                 
                 }
@@ -25,6 +25,7 @@ namespace FinancialApp.Utils
 
 
             past.Add(subdataFeeds.Last());
+            Console.WriteLine(past);
             return past;
         }
     }

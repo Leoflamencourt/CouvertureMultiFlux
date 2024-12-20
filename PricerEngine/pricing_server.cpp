@@ -16,27 +16,53 @@ using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 
-PnlMat* convertPastToPnlMat(const PricingInput *input) {
-    // Find size
-    int m, n;
-    m = input->past_size();
-    if (m == 0) {
+//PnlMat* convertPastToPnlMat(const PricingInput *input) {
+//    // Find size
+//    int m, n;
+//    m = input->past_size();
+//    if (m == 0) {
+//        return NULL;
+//    }
+//    n = input->past(0).value_size();
+//    for (int i = 0; i < input->past_size(); i++) {
+//        const PastLines &pastLine = input->past(i);
+//        if (pastLine.value_size() !=n) {
+//            std::cerr << "size mismatch in past" << std::endl;
+//            return NULL;
+//        }
+//    }
+//    // Parse data
+//    PnlMat *past = pnl_mat_create(m, n);
+//    for (int i = 0; i < input->past_size(); i++) {
+//        const PastLines &pastLine = input->past(i);
+//        for (int j = 0; j < pastLine.value_size(); j++) {
+//            MLET(past, i, j ) = pastLine.value(j);
+//        }
+//    }
+//    return past;
+//}
+PnlMat *convertPastToPnlMat(const PricingInput *input) {
+    int n_assets, n_times;
+    n_assets = input->past_size(); // Nombre de lignes (actifs)
+    if (n_assets == 0) {
         return NULL;
     }
-    n = input->past(0).value_size();
+    n_times = input->past(0).value_size(); // Nombre de colonnes (temps)
+
     for (int i = 0; i < input->past_size(); i++) {
         const PastLines &pastLine = input->past(i);
-        if (pastLine.value_size() !=n) {
+        if (pastLine.value_size() != n_times) {
             std::cerr << "size mismatch in past" << std::endl;
             return NULL;
         }
     }
-    // Parse data
-    PnlMat *past = pnl_mat_create(m, n);
-    for (int i = 0; i < input->past_size(); i++) {
+
+    // Création de la matrice avec dimensions inversées
+    PnlMat *past = pnl_mat_create(n_times, n_assets); // Temps x Actifs (Transposé)
+    for (int i = 0; i < n_assets; i++) {
         const PastLines &pastLine = input->past(i);
-        for (int j = 0; j < pastLine.value_size(); j++) {
-            MLET(past, i, j ) = pastLine.value(j);
+        for (int j = 0; j < n_times; j++) {
+            MLET(past, j, i) = pastLine.value(j); // Remplissage transposé
         }
     }
     return past;

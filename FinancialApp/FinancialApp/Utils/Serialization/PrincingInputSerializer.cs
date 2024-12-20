@@ -21,8 +21,8 @@ namespace FinancialApp.Utils.Serialization
                 MonitoringDateReached = parameters.PayoffDescription.PaymentDates.Contains(currentDate),
                 Time = converter.ConvertToMathDistance(currentDate, initialDate),
             };
-            past = ConvertToPastLines(ComputePastData.ComputePastLines(subdataFeeds, parameters));
-
+            pricingInput.Past.AddRange(ConvertToPastLines(ComputePastData.ComputePastLines(subdataFeeds, parameters)));
+   
             return pricingInput;
         }
 

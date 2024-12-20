@@ -20,7 +20,7 @@ class Program
         string financialParamsPath = args[0];
         string marketDataPath = args[1];
         string portfolioPath=args[2];
-
+        Console.WriteLine("Test log - Début de l'exécution");
         //read Data
         ParameterJsonDeserializer jsonDeserializer = new ParameterJsonDeserializer();
         TestParameters financialParams = jsonDeserializer.Deserialize(financialParamsPath);

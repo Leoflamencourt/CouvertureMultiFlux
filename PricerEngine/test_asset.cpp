@@ -16,12 +16,21 @@ int main(int argc, char **argv) {
    PnlMat *pastInvented = pnl_mat_create(blackScholesPricer.nAssets, 1);
 
     // Initialisation des valeurs de la première colonne
-    MLET(pastInvented, 0, 0) = 13; // Actif 0, colonne 0
+    MLET(pastInvented, 0, 0) = 12; // Actif 0, colonne 0
     MLET(pastInvented, 1, 0) = 15; // Actif 1, colonne 0
-    MLET(pastInvented, 2, 0) = 17; // Actif 2, colonne 0
-    MLET(pastInvented, 3, 0) = 17; // Actif 3, colonne 0
-    MLET(pastInvented, 4, 0) = 14; // Actif 4, colonne 0
-    PnlMat *path = pnl_mat_create(blackScholesPricer.nAssets, blackScholesPricer.paymentDates->size+1);
+    MLET(pastInvented, 2, 0) = 11; // Actif 2, colonne 0
+    MLET(pastInvented, 3, 0) = 15; // Actif 3, colonne 0
+    MLET(pastInvented, 4, 0) = 16; 
+    MLET(pastInvented, 5, 0) = 10; // Actif 4, colonne 0
+    MLET(pastInvented, 6, 0) = 11; 
+    MLET(pastInvented, 7, 0) = 11; 
+    //// Initialisation des valeurs de la première colonne
+    //MLET(pastInvented, 0, 1) = 13,3; // Actif 0, colonne 0
+    //MLET(pastInvented, 1, 1) = 15; // Actif 1, colonne 0
+    //MLET(pastInvented, 2, 1) = 17,13; // Actif 2, colonne 0
+    //MLET(pastInvented, 3, 1) =16,89; // Actif 3, colonne 0
+    //MLET(pastInvented, 4, 1) = 14,16; // Actif 4, colonne 0
+   
 
     double currentDate = 0;
    // blackScholesPricer.asset(pastInvented, currentDate, false, path);

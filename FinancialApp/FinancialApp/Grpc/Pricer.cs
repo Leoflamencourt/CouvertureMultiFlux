@@ -28,7 +28,7 @@ namespace FinancialApp.Grpc
                     HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             };
 
-            _channel = GrpcChannel.ForAddress("http://localhost:5079", new GrpcChannelOptions { HttpHandler = httpHandler });
+            _channel = GrpcChannel.ForAddress("http://localhost:50051", new GrpcChannelOptions { HttpHandler = httpHandler });
            
             _client = new GrpcPricer.GrpcPricerClient(_channel);
         }
@@ -43,14 +43,23 @@ namespace FinancialApp.Grpc
         public async Task<PriceEstimation> PriceandDeltaAsync(List<DataFeed> subDataFeeds, DateTime currentDate, TestParameters testParameters)
         {
             // Sérialisation de l'entrée
+
+
             PricingInputSerializer serializer = new PricingInputSerializer();
             PricingInput input = serializer.Serialize(subDataFeeds, testParameters);
-        
+            // Appel au serveur gRPC pour obtenir les PricingOutput
+            Console.WriteLine($"past_size: {input.Past.Count}");
+            foreach (var line in input.Past)
+            {
+                Console.WriteLine($"line size: {line.Value.Count}");
+            }
+            PricingOutput response = await _client.PriceAndDeltasAsync(input);
+            
+
 
             try
             {
-                // Appel au serveur gRPC pour obtenir les PricingOutput
-                PricingOutput response = await _client.PriceAndDeltasAsync(input);
+               
                 PriceEstimation result = new PriceEstimation
                 {
                     Price = response.Price,

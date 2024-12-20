@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "FinancialApp": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\leo\\Desktop\\pcpmf\\TestCases\\Basket_5_3_1\\basket_5_3_1_param.json\"\"C:\\Users\\leo\\Desktop\\pcpmf\\TestCases\\Basket_5_3_1\\basket_5_3_1_mkt_data.csv\" \"C:\\Users\\leo\\Desktop\\pcpmf\\TestCases\\Basket_5_3_1\\basket_5_3_1_portfolio.json\"",
+      "workingDirectory": "C:\\Users\\leo\\Desktop"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
