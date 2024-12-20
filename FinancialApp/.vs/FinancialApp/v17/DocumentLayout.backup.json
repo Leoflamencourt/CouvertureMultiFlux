@@ -114,8 +114,7 @@
               "RelativeToolTip": "FinancialApp\\Program.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAzwBYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T18:17:44.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:17:44.078Z"
             },
             {
               "$type": "Document",
@@ -127,8 +126,7 @@
               "RelativeToolTip": "FinancialApp\\Grpc\\Pricer.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAqwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T20:27:11.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T20:27:11.71Z"
             },
             {
               "$type": "Document",
@@ -138,7 +136,7 @@
               "RelativeDocumentMoniker": "FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
               "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
               "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\PrincingInputSerializer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA6wBgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T20:00:36.578Z",
               "EditorCaption": ""
@@ -165,8 +163,7 @@
               "RelativeToolTip": "FinancialApp\\Grpc\\PriceEstimation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T10:55:00.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T10:55:00.711Z"
             },
             {
               "$type": "Document",
@@ -178,8 +175,7 @@
               "RelativeToolTip": "FinancialApp\\Hedging\\HedgingEngine.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAA1wCkAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T20:27:58.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T20:27:58.028Z"
             },
             {
               "$type": "Document",
@@ -191,8 +187,7 @@
               "RelativeToolTip": "FinancialApp\\Utils\\Serialization\\IDeserializer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T20:18:13.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T20:18:13.034Z"
             },
             {
               "$type": "Document",
@@ -204,8 +199,7 @@
               "RelativeToolTip": "FinancialApp\\Utils\\ComputePastData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T11:32:59.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T11:32:59.292Z"
             },
             {
               "$type": "Document",
@@ -240,8 +234,7 @@
               "ToolTip": "C:\\Users\\leo\\Desktop\\CouvertureMultiFlux\\FinancialApp\\FinancialApp\\FinancialApp.csproj",
               "RelativeToolTip": "FinancialApp\\FinancialApp.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-19T22:51:07.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T22:51:07.375Z"
             },
             {
               "$type": "Document",
@@ -253,8 +246,7 @@
               "RelativeToolTip": "FinancialApp\\Utils\\Util.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T21:23:03.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T21:23:03.579Z"
             },
             {
               "$type": "Document",
@@ -278,8 +270,7 @@
               "RelativeToolTip": "FinancialApp\\FinancialApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-16T17:53:29.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T17:53:29.152Z"
             },
             {
               "$type": "Document",

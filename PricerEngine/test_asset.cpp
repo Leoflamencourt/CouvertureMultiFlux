@@ -17,13 +17,13 @@ int main(int argc, char **argv) {
 
     // Initialisation des valeurs de la première colonne
     MLET(pastInvented, 0, 0) = 12; // Actif 0, colonne 0
-    MLET(pastInvented, 1, 0) = 15; // Actif 1, colonne 0
-    MLET(pastInvented, 2, 0) = 11; // Actif 2, colonne 0
+    MLET(pastInvented, 1, 0) = 10; // Actif 1, colonne 0
+    MLET(pastInvented, 2, 0) = 16; // Actif 2, colonne 0
     MLET(pastInvented, 3, 0) = 15; // Actif 3, colonne 0
-    MLET(pastInvented, 4, 0) = 16; 
-    MLET(pastInvented, 5, 0) = 10; // Actif 4, colonne 0
-    MLET(pastInvented, 6, 0) = 11; 
-    MLET(pastInvented, 7, 0) = 11; 
+    MLET(pastInvented, 4, 0) = 14; 
+    MLET(pastInvented, 5, 0) = 18; // Actif 4, colonne 0
+    MLET(pastInvented, 6, 0) = 19; 
+    MLET(pastInvented, 7, 0) = 17; 
     //// Initialisation des valeurs de la première colonne
     //MLET(pastInvented, 0, 1) = 13,3; // Actif 0, colonne 0
     //MLET(pastInvented, 1, 1) = 15; // Actif 1, colonne 0
@@ -33,14 +33,10 @@ int main(int argc, char **argv) {
    
 
     double currentDate = 0;
-   // blackScholesPricer.asset(pastInvented, currentDate, false, path);
-
-    
+   // blackScholesPricer.asset(pastInvented, currentDate, false, path);   
 
     double price;
     double stddev;
-
-
 
     PnlVect *deltas = pnl_vect_create(blackScholesPricer.nAssets);
     PnlVect *detlasStddev = pnl_vect_create(blackScholesPricer.nAssets);

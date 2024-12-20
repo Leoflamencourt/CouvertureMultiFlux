@@ -1,5 +1,6 @@
 #include "conditionnal_max.h"
 #include <corecrt_math.h>
+#include <iostream>
 
 double ConditionnalMax::payoff(PnlMat *path, double interestRate) {
     int nb_assets = path->m;        // Nombre d'actifs
@@ -16,9 +17,10 @@ double ConditionnalMax::payoff(PnlMat *path, double interestRate) {
 
         // Calcul du paiement pour la date m
         double P_m = (maxAsset - K_m) > 0 ? (maxAsset - K_m) : 0;
-
+        P_m *= indicatrice;
+        
         // Si le paiement est positif, on ajoute sa valeur actualisée à la somme
-        sum += P_m * indicatrice * exp((GET(paymentDates, paymentDates->size - 1) - GET(paymentDates, m - 1)) * interestRate);
+        sum += P_m * exp((GET(paymentDates, paymentDates->size - 1) - GET(paymentDates, m - 1)) * interestRate);
 
         // Met à jour l'indicatrice : si un paiement a été effectué, on arrête les prochains paiements
         indicatrice = P_m > 0 ? 0 : 1;
